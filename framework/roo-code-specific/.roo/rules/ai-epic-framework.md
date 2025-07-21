@@ -1,4 +1,4 @@
-# AI Epic Framework - Windsurf Rules
+# AI Epic Framework - Roo Code Rules
 
 ## AI Context Header
 **When To Use**: Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session.

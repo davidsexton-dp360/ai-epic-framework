@@ -1,7 +1,7 @@
-# GitHub Copilot Instructions
+# AI Epic Framework - GitHub Copilot Instructions
 
-<!-- This is your main user prompt. Usually you copy this to your system or main user prompt of your AI Agent or Coding Tool -->
-# AI Agent System Prompt: Epic Workflow & Architecture Documentation
+## Project Context
+This project uses the AI Epic Framework, a systematic approach for AI assistants to help developers build complex applications through structured workflows, problem-solving methodologies, and architecture design processes.
 
 ## AI Context Header
 **When To Use**: Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session.
@@ -11,28 +11,23 @@
 2. "How do I efficiently manage context window when working on epic workflows?"
 3. "What's the decision matrix for loading problem-solving versus execution standards?"
 
-## Framework Navigation
-- **Epic Workflow**: [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Complete workflow management system
-- **Problem Solving**: [problem-solving-framework.md](./problem-solving-framework.md) - Systematic troubleshooting approach
-- **Execution Standards**: [general-execution-standards.md](./general-execution-standards.md) - Quality and decision-making protocols
-- **Architecture Lifecycle**: [architecture-lifecycle.md](./architecture-lifecycle.md) - Architecture documentation management
-- **Architecture Design**: [architecture-design-process.md](./architecture-design-process.md) - Design methodology and templates
-
-## Overview
-
-This system prompt provides conditional guidance for AI agents to selectively load specific documentation files based on task context, optimizing token usage while maintaining access to comprehensive workflow and architecture guidance.
+## Framework Overview
+The AI Epic Framework provides systematic approaches for AI assistants to help developers build complex applications through structured workflows, problem-solving methodologies, and architecture design processes.
 
 ## Core Principles
-
 - **Context-Aware Loading**: Only load documentation when specifically needed for the current task
 - **Progressive Disclosure**: Start with this system prompt, then conditionally load detailed documentation
 - **Token Efficiency**: Avoid loading all files simultaneously to preserve context window
 - **Task-Specific Guidance**: Match documentation to the specific workflow phase or problem type
+- Use systematic problem-solving approaches for complex issues
+- Implement hierarchical task breakdown (Initiative → Epic → Phase → Step)
+- Apply research-first methodology for architecture decisions
+- Maintain comprehensive documentation and context management
+- Focus on AI framework application rather than generic engineering principles
 
 ## Decision Matrix: When to Load Which Documentation
 
-### 1. Epic Workflow Instructions ([epic-workflow-instructions.md](./epic-workflow-instructions.md))
-
+### 1. Epic Workflow Instructions
 **Load When:**
 - User requests creation of new initiatives, epics, phases, or steps
 - Questions about task hierarchy or folder structure
@@ -46,12 +41,7 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - File references: `INDEX.md`, `REQUIREMENTS.md`
 - Task status tracking or progress management
 
-**Related Documentation:**
-- [general-execution-standards.md](./general-execution-standards.md) - Quality standards for epic execution
-- [architecture-lifecycle.md](./architecture-lifecycle.md) - Architecture integration during epics
-
-### 2. Architecture Lifecycle Management ([architecture-lifecycle.md](./architecture-lifecycle.md))
-
+### 2. Architecture Lifecycle Management
 **Load When:**
 - Working with architecture documentation in `docs/architecture/`
 - Creating or updating architecture index files
@@ -65,12 +55,7 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Document size concerns or breakdown requirements
 - Architecture discovery or search commands needed
 
-**Related Documentation:**
-- [architecture-design-process.md](./architecture-design-process.md) - Design methodology and component templates
-- [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Architecture integration in workflows
-
-### 3. Architecture Design Process ([architecture-design-process.md](./architecture-design-process.md))
-
+### 3. Architecture Design Process
 **Load When:**
 - Designing new system architecture or components
 - Creating architecture proposals or technical designs
@@ -84,12 +69,7 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Technology stack selection or evaluation
 - Architecture validation or review processes
 
-**Related Documentation:**
-- [architecture-lifecycle.md](./architecture-lifecycle.md) - Documentation structure and management
-- [general-execution-standards.md](./general-execution-standards.md) - Research and validation protocols
-
-### 4. Problem Solving Framework ([problem-solving-framework.md](./problem-solving-framework.md))
-
+### 4. Problem Solving Framework
 **Load When:**
 - User explicitly requests systematic problem analysis
 - Multiple failed solution attempts (3+ cycles)
@@ -97,18 +77,7 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - AI appears stuck in solution loops
 - Need for comprehensive research and documentation approach
 
-**Related Documentation:**
-- [general-execution-standards.md](./general-execution-standards.md) - Research protocols and quality standards
-- [architecture-design-process.md](./architecture-design-process.md) - Component analysis methodology
-
-**Key Indicators:**
-- Keywords: "problem solving", "debugging", "systematic analysis", "research"
-- Multiple failed attempts mentioned
-- Complex technical issues spanning multiple components
-- Request for structured troubleshooting approach
-
-### 5. General Execution Standards ([general-execution-standards.md](./general-execution-standards.md))
-
+### 5. General Execution Standards
 **Load When:**
 - Questions about general development practices or standards
 - File navigation and verification procedures
@@ -116,132 +85,345 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Decision-making protocols or documentation requirements
 - General quality assurance or execution methodology
 
-**Key Indicators:**
-- Keywords: "standards", "best practices", "file navigation", "tools"
-- General methodology questions
-- Quality assurance or documentation standards
-- Cross-cutting concerns not specific to other categories
+## Epic Workflow Management
 
-**Related Documentation:**
-- [problem-solving-framework.md](./problem-solving-framework.md) - Systematic troubleshooting approach
-- [architecture-design-process.md](./architecture-design-process.md) - Research and validation methodology
-- [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Quality standards for workflow execution
+### MANDATORY SEQUENCE
+Plan → Document → Execute → Track → Validate
 
-## Conditional Loading Logic
+### Task Hierarchy Structure
+- **Initiative** → **Epic** → **Phase** → **Step** (smallest actionable unit)
+- Sequential numbering required (1, 2, 3, etc.)
+- Each level must reference its parent task in all documentation
 
-### Primary Decision Flow
+### Directory Structure and Naming
 
-1. **Identify Task Type**
-   - Workflow management → Load `epic-workflow-instructions.md`
-   - Architecture documentation → Load `architecture-lifecycle.md`
-   - System design → Load `architecture-design-process.md`
-   - Problem solving → Load `problem-solving-framework.md`
-   - General practices → Load `general-execution-standards.md`
-
-2. **Check for Multiple Needs**
-   - If task spans multiple areas, load primary file first
-   - Load additional files only when specifically needed
-   - Prioritize based on immediate task requirements
-
-3. **Progressive Loading**
-   - Start with most relevant single file
-   - Load additional files only when current file lacks needed information
-   - Unload files when no longer needed for current task
-
-### Secondary Decision Factors
-
-- **User Experience Level**: New users may need more comprehensive guidance
-- **Task Complexity**: Complex tasks may require multiple file references
-- **Context Window**: Available tokens determine how much can be loaded
-- **Task Phase**: Different phases may require different documentation
-
-## Usage Instructions for AI Agents
-
-### Step 1: Initial Assessment
+#### Folder Naming Convention
 ```
-1. Analyze user query for key indicators
-2. Identify primary task category
-3. Determine if single file or multiple files needed
-4. Check context window availability
+/.epic-workflows/tasks/[TASK_TYPE]_[NUMBER]_[TASK_NAME]/
 ```
 
-### Step 2: File Selection
+#### Hierarchical Structure
+- **Initiative**  
+  `/.epic-workflows/tasks/Initiative_[NUMBER]_[TASK_NAME]/`
+- **Epic**  
+  `/.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[TASK_NAME]/`
+- **Phase**  
+  `/.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[EPIC_NAME]/Phase_[NUMBER]_[TASK_NAME]/`
+- **Step**  
+  `/.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[EPIC_NAME]/Phase_[NUMBER]_[PHASE_NAME]/Step_[NUMBER]_[TASK_NAME]/`
+
+#### Naming Rules
+- **[TASK_TYPE]**: Initiative, Epic, Phase, Step
+- **[TASK_NAME]**: Short, descriptive (max 5 words)
+- **[NUMBER]**: Sequential ordering (1, 2, 3 …)
+- Parent names (`[INITIATIVE_NAME]`, `[EPIC_NAME]`, `[PHASE_NAME]`) are the short names of their respective parent tasks
+
+#### Example Structure
 ```
-1. Select primary file based on decision matrix
-2. Load only the most relevant file initially
-3. Note potential secondary files for later loading
-4. Confirm file selection matches task requirements
+.epic-workflows/
+└── tasks/
+    └── Initiative_1_user-auth-system/
+        ├── INDEX.md
+        ├── REQUIREMENTS.md
+        ├── Epic_1_oauth-integration/
+        │   ├── INDEX.md
+        │   ├── REQUIREMENTS.md
+        │   ├── Phase_1_google-oauth-setup/
+        │   │   ├── INDEX.md
+        │   │   ├── REQUIREMENTS.md
+        │   │   ├── Step_1_install-passport-google/
+        │   │   │   ├── INDEX.md
+        │   │   │   └── REQUIREMENTS.md
+        │   │   └── Step_2_configure-oauth-routes/
+        │   │       ├── INDEX.md
+        │   │       └── REQUIREMENTS.md
+        │   └── Phase_2_token-validation/
+        │       ├── INDEX.md
+        │       └── REQUIREMENTS.md
+        └── Epic_2_user-profile-management/
+            ├── INDEX.md
+            └── REQUIREMENTS.md
 ```
 
-### Step 3: Conditional Loading
-```
-1. Load primary file when task requires detailed guidance
-2. Reference this system prompt for quick decisions
-3. Load additional files only when gaps identified
-4. Document which files were loaded and why
+### Pre-Execution Requirements
+
+#### Mandatory Task Creation Requirements
+- Generate the entire folder hierarchy in `/.epic-workflows/tasks/` *before* work starts
+- Every task directory **must** contain `INDEX.md` and `REQUIREMENTS.md`
+
+#### Mandatory Goal Definition Requirements
+**CRITICAL**: Every task at every level (Initiative, Epic, Phase, Step) **MUST** have clearly defined:
+
+##### Business/Product Goal Requirements
+- **Primary Business Objective**: Clear, measurable business value statement
+- **Business Impact**: Quantifiable impact on business metrics (revenue, user engagement, efficiency, etc.)
+- **User Value**: Direct benefit delivered to end users
+- **Success Metrics**: Specific, measurable outcomes that define success
+- **Parent Alignment**: Explicit explanation of how this goal supports parent task's business objective
+
+##### Technical Goal Requirements  
+- **Primary Technical Objective**: Clear, specific technical outcome statement
+- **Technical Impact**: Measurable improvement to system (performance, security, maintainability, scalability)
+- **Implementation Scope**: Clear boundaries of what will be built/modified
+- **Quality Standards**: Specific performance, security, reliability requirements
+- **Parent Alignment**: Explicit explanation of how this goal supports parent task's technical objective
+
+### INDEX.md Template
+```markdown
+# [Task Name] - Index
+
+## Overview
+Brief description of the task and its objectives.
+
+## Status
+- [ ] Not Started
+- [ ] In Progress
+- [ ] Completed
+- [ ] Blocked
+
+## Dependencies
+List any dependencies or prerequisites.
+
+## Deliverables
+List expected outputs and deliverables.
+
+## Notes
+Additional context and information.
 ```
 
-### Step 4: Context Management
-```
-1. Monitor context window usage
-2. Unload files when no longer needed
-3. Prioritize active task requirements
-4. Maintain this system prompt throughout session
+### REQUIREMENTS.md Template
+```markdown
+# [Task Name] - Requirements
+
+## Functional Requirements
+- [Requirement 1]
+- [Requirement 2]
+
+## Technical Requirements
+- [Technical requirement 1]
+- [Technical requirement 2]
+
+## Acceptance Criteria
+- [Criterion 1]
+- [Criterion 2]
+
+## Constraints
+- [Constraint 1]
+- [Constraint 2]
 ```
 
-## Quick Reference Commands
+## Problem Solving Framework
 
-### File Discovery
+### When To Use
+- User explicitly requests systematic problem analysis
+- Multiple failed solution attempts (3+ cycles)
+- Complex multi-component system failures
+- AI appears stuck in solution loops
+- Need for comprehensive research and documentation approach
+
+### Systematic Analysis Process
+1. **Problem Identification**: Clearly define the issue and scope
+2. **Research Phase**: Gather comprehensive information and context
+3. **Root Cause Analysis**: Identify underlying causes and dependencies
+4. **Solution Development**: Create systematic solution approaches
+5. **Implementation**: Execute solutions with validation
+6. **Verification**: Confirm resolution and document learnings
+
+### Research-First Methodology
+- Always research before implementing solutions
+- Use multiple information sources (documentation, examples, community)
+- Document findings and decision rationale
+- Validate assumptions through testing
+
+### Problem Analysis Template
+```
+## Problem Analysis Report
+
+### Problem Statement
+[Clear, specific description of the issue]
+
+### Investigation Scope
+- **Components Affected**: [List]
+- **User Impact**: [Description]
+- **Business Impact**: [Description]
+
+### Research Findings
+- **Documentation Review**: [Findings]
+- **Community Solutions**: [Findings]
+- **Similar Issues**: [Findings]
+
+### Root Cause Analysis
+- **Primary Cause**: [Description]
+- **Contributing Factors**: [List]
+- **Dependencies**: [List]
+
+### Solution Approach
+- **Recommended Solution**: [Description]
+- **Alternative Approaches**: [List]
+- **Implementation Plan**: [Steps]
+
+### Validation Strategy
+- **Testing Approach**: [Description]
+- **Success Criteria**: [List]
+- **Rollback Plan**: [Description]
+```
+
+## Architecture Design Process
+
+### When To Use
+- Designing new system architecture or components
+- Creating architecture proposals or technical designs
+- Need guidance on research methodology for architecture decisions
+- Questions about component design, integration patterns, or quality attributes
+- Architecture review processes or validation requirements
+
+### Research-First Architecture Methodology
+1. **Research Phase**: Gather comprehensive information about requirements, constraints, and existing solutions
+2. **Analysis Phase**: Evaluate options against quality attributes and business requirements
+3. **Design Phase**: Create detailed architecture proposals with clear rationale
+4. **Validation Phase**: Review and validate design decisions
+5. **Documentation Phase**: Create comprehensive architecture documentation
+
+### Component Design Template
+```
+## Component: [Name]
+**Responsibility**: One-sentence summary
+**Interfaces**: REST / gRPC / events
+**Dependencies**: [List]
+**Scaling**: Horizontal AutoScale / etc.
+**Failure Modes**: [Describe]
+```
+
+### Quality Attributes Planning Matrix
+| Attribute   | Strategy                                  |
+|-------------|-------------------------------------------|
+| Scalability | Stateless services + autoscaling groups   |
+| Performance | In-memory cache, async I/O                |
+| Security    | Zero-trust, least privilege, encryption   |
+| Reliability | Circuit breakers, retries, health probes  |
+| Observability | Structured logs, metrics, tracing      |
+
+### Architecture Decision Record Template
+```
+## Architecture Decision Record
+
+### Context
+[Background and problem statement]
+
+### Decision
+[Clear statement of the decision made]
+
+### Rationale
+[Detailed explanation of why this decision was made]
+
+### Alternatives Considered
+[List of alternatives with pros/cons]
+
+### Consequences
+[Positive and negative consequences]
+
+### Implementation Notes
+[Specific implementation guidance]
+```
+
+## Architecture Lifecycle Management
+
+### When To Use
+- Working with architecture documentation in `docs/architecture/`
+- Creating or updating architecture index files
+- Questions about document categorization or folder structure
+- Need to understand architecture document size limits (700 lines)
+- Managing architecture document lifecycle (creation, update, deprecation)
+
+### Document Organization Structure
+```
+docs/architecture/
+├── index.md (mandatory)
+├── [category]/
+│   ├── index.md (mandatory)
+│   ├── [component].md
+│   └── [component].md
+└── [category]/
+    ├── index.md (mandatory)
+    └── [component].md
+```
+
+### Mandatory Requirements
+- **Index Files**: Every architecture folder must contain an `index.md`
+- **Document Size**: Maximum 700 lines per document
+- **Categorization**: Organize by system component or architectural concern
+- **Cross-References**: Maintain links between related documents
+
+### Document Lifecycle
+1. **Creation**: New documents follow canonical structure
+2. **Updates**: Track changes and maintain version history
+3. **Deprecation**: Mark obsolete documents clearly
+4. **Archival**: Move deprecated documents to archive folder
+
+### Architecture Discovery Commands
 ```bash
-# Find workflow tasks
-find /.epic-workflows/tasks/ -name "*[TASK_TYPE]*" -type d
+# Find all architecture documents
+find docs/architecture/ -name "*.md" -type f
 
-# Find architecture docs
-find docs/architecture/ -name "*.md" | grep -i [TOPIC]
+# Check document sizes
+find docs/architecture/ -name "*.md" -exec wc -l {} \;
 
-# Check file existence before loading
-ls -la /.epic-workflows/tasks/[TASK_TYPE]_[NUMBER]_[TASK_NAME]/
-ls -la docs/architecture/[CATEGORY]/
+# Find missing index files
+find docs/architecture/ -type d -exec test ! -f {}/index.md \; -print
+
+# Search architecture content
+grep -r "architecture" docs/architecture/
 ```
 
-### Context Efficiency Tips
-- Load files just-in-time, not proactively
-- Use this system prompt for quick decisions
-- Reference specific sections rather than entire files when possible
-- Combine multiple small queries rather than loading large files
+## General Execution Standards
 
-## Emergency Protocols
+### When To Use
+- Questions about general development practices or standards
+- File navigation and verification procedures
+- Tool usage guidelines (Context7, Perplexity, Web search)
+- Decision-making protocols or documentation requirements
+- General quality assurance or execution methodology
 
-### When Multiple Files Needed
-1. Load most critical file first
-2. Extract key information quickly
-3. Unload and load next file
-4. Synthesize information from memory
+### Decision Making Protocol
+1. **Research-First**: Always consult official documentation first
+2. **Multi-Source Validation**: Cross-check from at least two authoritative sources
+3. **Quality Over Speed**: Plan thoroughly, implement incrementally
+4. **Comprehensive Documentation**: Capture every decision in task documentation
+5. **Architecture Compliance**: Reference/update architecture docs for every significant change
 
-### When Context Window Full
-1. Prioritize current task requirements
-2. Unload non-essential files
-3. Keep this system prompt loaded
-4. Use progressive disclosure strategy
+### Tool Usage Guidelines
+- **Context7**: Deep codebase pattern & dependency analysis
+- **Perplexity**: External best-practice & doc retrieval
+- **grep/rg**: Fast in-repo search for configs & patterns
+- **wc -l**: Enforce <700-line doc rule
+- **find**: Structure & file existence checks
 
-### When Unsure Which File
-1. Default to `general-execution-standards.md`
-2. Use decision matrix to refine selection
-3. Load most specific file for task
-4. Reference this system prompt for guidance
+### File Navigation and Verification
+1. **Existence Check**: Verify files exist before referencing
+2. **Content Validation**: Ensure content matches expectations
+3. **Path Verification**: Confirm relative paths are correct
+4. **Format Compliance**: Validate against IDE-specific requirements
+
+### Quality Assurance Standards
+- **Documentation**: Every significant decision must be documented
+- **Testing**: All changes must include appropriate tests
+- **Review**: Code and documentation changes require review
+- **Validation**: Verify changes work as expected
+
+## Context Management
+- Optimize token usage through conditional documentation loading
+- Use progressive disclosure for complex investigations
+- Maintain context window efficiency
+- Implement task-specific guidance systems
+
+## When To Use This Framework
+- Load when creating new initiatives, epics, phases, or steps
+- Use for task hierarchy questions, folder structure organization, or workflow management
+- Apply when facing stubborn technical issues or complex system failures
+- Use when designing new system architecture or making technical decisions
 
 ## Success Metrics
-
-- **Efficiency**: Minimal token usage while maintaining effectiveness
-- **Accuracy**: Correct file selection for task requirements
-- **Completeness**: All necessary information accessed when needed
-- **Flexibility**: Ability to adapt to changing task requirements
-
-This system prompt should remain loaded throughout the session as the primary navigation tool for accessing detailed documentation only when specifically needed.
-
-
-## GitHub Copilot Integration
-These instructions guide GitHub Copilot's behavior in this repository.
-- Place this file at `.github/copilot-instructions.md`
-- Works with Copilot Chat, Copilot Agent, and inline suggestions
-- Supports repository-level and workspace-level configuration
+- Problem fully resolved & validated
+- Knowledge preserved in docs
+- Process improvements captured
+- Framework scales with project complexity 

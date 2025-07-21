@@ -1,4 +1,10 @@
-# AI Epic Framework - Gemini CLI Instructions
+---
+description: "AI Epic Framework - Main user rules template for Cursor AI"
+alwaysApply: true
+---
+
+<!-- This is your main user prompt. Usually you copy this to your system or main user prompt of your AI Agent or Coding Tool -->
+# AI Agent System Prompt: Epic Workflow & Architecture Documentation
 
 ## AI Context Header
 **When To Use**: Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session.
@@ -9,11 +15,11 @@
 3. "What's the decision matrix for loading problem-solving versus execution standards?"
 
 ## Framework Navigation
-- **Epic Workflow**: epic-workflow-instructions.md - Complete workflow management system
-- **Problem Solving**: problem-solving-framework.md - Systematic troubleshooting approach
-- **Execution Standards**: general-execution-standards.md - Quality and decision-making protocols
-- **Architecture Lifecycle**: architecture-lifecycle.md - Architecture documentation management
-- **Architecture Design**: architecture-design-process.md - Design methodology and templates
+- **Epic Workflow**: [epic-workflow-instructions.mdc](./epic-workflow-instructions.mdc) - Complete workflow management system
+- **Problem Solving**: [problem-solving-framework.mdc](./problem-solving-framework.mdc) - Systematic troubleshooting approach
+- **Execution Standards**: [general-execution-standards.mdc](./general-execution-standards.mdc) - Quality and decision-making protocols
+- **Architecture Lifecycle**: [architecture-lifecycle.mdc](./architecture-lifecycle.mdc) - Architecture documentation management
+- **Architecture Design**: [architecture-design-process.mdc](./architecture-design-process.mdc) - Design methodology and templates
 
 ## Overview
 
@@ -28,7 +34,7 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 
 ## Decision Matrix: When to Load Which Documentation
 
-### 1. Epic Workflow Instructions (epic-workflow-instructions.md)
+### 1. Epic Workflow Instructions ([epic-workflow-instructions.mdc](./epic-workflow-instructions.mdc))
 
 **Load When:**
 - User requests creation of new initiatives, epics, phases, or steps
@@ -44,10 +50,10 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Task status tracking or progress management
 
 **Related Documentation:**
-- general-execution-standards.md - Quality standards for epic execution
-- architecture-lifecycle.md - Architecture integration during epics
+- [general-execution-standards.mdc](./general-execution-standards.mdc) - Quality standards for epic execution
+- [architecture-lifecycle.mdc](./architecture-lifecycle.mdc) - Architecture integration during epics
 
-### 2. Architecture Lifecycle Management (architecture-lifecycle.md)
+### 2. Architecture Lifecycle Management ([architecture-lifecycle.mdc](./architecture-lifecycle.mdc))
 
 **Load When:**
 - Working with architecture documentation in `docs/architecture/`
@@ -63,10 +69,10 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Architecture discovery or search commands needed
 
 **Related Documentation:**
-- architecture-design-process.md - Design methodology and component templates
-- epic-workflow-instructions.md - Architecture integration in workflows
+- [architecture-design-process.mdc](./architecture-design-process.mdc) - Design methodology and component templates
+- [epic-workflow-instructions.mdc](./epic-workflow-instructions.mdc) - Architecture integration in workflows
 
-### 3. Architecture Design Process (architecture-design-process.md)
+### 3. Architecture Design Process ([architecture-design-process.mdc](./architecture-design-process.mdc))
 
 **Load When:**
 - Designing new system architecture or components
@@ -82,10 +88,10 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Architecture validation or review processes
 
 **Related Documentation:**
-- architecture-lifecycle.md - Documentation structure and management
-- general-execution-standards.md - Research and validation methodology
+- [architecture-lifecycle.mdc](./architecture-lifecycle.mdc) - Documentation structure and management
+- [general-execution-standards.mdc](./general-execution-standards.mdc) - Research and validation protocols
 
-### 4. Problem Solving Framework (problem-solving-framework.md)
+### 4. Problem Solving Framework ([problem-solving-framework.mdc](./problem-solving-framework.mdc))
 
 **Load When:**
 - User explicitly requests systematic problem analysis
@@ -95,8 +101,8 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Need for comprehensive research and documentation approach
 
 **Related Documentation:**
-- general-execution-standards.md - Research protocols and quality standards
-- architecture-design-process.md - Component analysis methodology
+- [general-execution-standards.mdc](./general-execution-standards.mdc) - Research protocols and quality standards
+- [architecture-design-process.mdc](./architecture-design-process.mdc) - Component analysis methodology
 
 **Key Indicators:**
 - Keywords: "problem solving", "debugging", "systematic analysis", "research"
@@ -104,7 +110,7 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Complex technical issues spanning multiple components
 - Request for structured troubleshooting approach
 
-### 5. General Execution Standards (general-execution-standards.md)
+### 5. General Execution Standards ([general-execution-standards.mdc](./general-execution-standards.mdc))
 
 **Load When:**
 - Questions about general development practices or standards
@@ -120,20 +126,20 @@ This system prompt provides conditional guidance for AI agents to selectively lo
 - Cross-cutting concerns not specific to other categories
 
 **Related Documentation:**
-- problem-solving-framework.md - Systematic troubleshooting approach
-- architecture-design-process.md - Research and validation methodology
-- epic-workflow-instructions.md - Quality standards for workflow execution
+- [problem-solving-framework.mdc](./problem-solving-framework.mdc) - Systematic troubleshooting approach
+- [architecture-design-process.mdc](./architecture-design-process.mdc) - Research and validation methodology
+- [epic-workflow-instructions.mdc](./epic-workflow-instructions.mdc) - Quality standards for workflow execution
 
 ## Conditional Loading Logic
 
 ### Primary Decision Flow
 
 1. **Identify Task Type**
-   - Workflow management → Load `epic-workflow-instructions.md`
-   - Architecture documentation → Load `architecture-lifecycle.md`
-   - System design → Load `architecture-design-process.md`
-   - Problem solving → Load `problem-solving-framework.md`
-   - General practices → Load `general-execution-standards.md`
+   - Workflow management → Load `epic-workflow-instructions.mdc`
+   - Architecture documentation → Load `architecture-lifecycle.mdc`
+   - System design → Load `architecture-design-process.mdc`
+   - Problem solving → Load `problem-solving-framework.mdc`
+   - General practices → Load `general-execution-standards.mdc`
 
 2. **Check for Multiple Needs**
    - If task spans multiple areas, load primary file first
@@ -222,135 +228,10 @@ ls -la docs/architecture/[CATEGORY]/
 4. Use progressive disclosure strategy
 
 ### When Unsure Which File
-1. Default to `general-execution-standards.md`
+1. Default to `general-execution-standards.mdc`
 2. Use decision matrix to refine selection
 3. Load most specific file for task
 4. Reference this system prompt for guidance
-
-## Epic Workflow Management
-
-### Task Hierarchy Structure
-```
-Initiative/
-├── Epic_001_Task_Name/
-│   ├── Phase_001_Phase_Name/
-│   │   ├── Step_001_Step_Name/
-│   │   │   ├── INDEX.md
-│   │   │   ├── REQUIREMENTS.md
-│   │   │   └── [implementation files]
-│   │   └── Step_002_Step_Name/
-│   └── Phase_002_Phase_Name/
-└── Epic_002_Task_Name/
-```
-
-### INDEX.md Template
-```markdown
-# [Task Name] - Index
-
-## Overview
-Brief description of the task and its objectives.
-
-## Status
-- [ ] Not Started
-- [ ] In Progress
-- [ ] Completed
-- [ ] Blocked
-
-## Dependencies
-List any dependencies or prerequisites.
-
-## Deliverables
-List expected outputs and deliverables.
-
-## Notes
-Additional context and information.
-```
-
-### REQUIREMENTS.md Template
-```markdown
-# [Task Name] - Requirements
-
-## Functional Requirements
-- [Requirement 1]
-- [Requirement 2]
-
-## Technical Requirements
-- [Technical requirement 1]
-- [Technical requirement 2]
-
-## Acceptance Criteria
-- [Criterion 1]
-- [Criterion 2]
-
-## Constraints
-- [Constraint 1]
-- [Constraint 2]
-```
-
-## Problem Solving Framework
-
-### Systematic Analysis Process
-1. **Problem Identification**: Clearly define the issue and scope
-2. **Research Phase**: Gather comprehensive information and context
-3. **Root Cause Analysis**: Identify underlying causes and dependencies
-4. **Solution Development**: Create systematic solution approaches
-5. **Implementation**: Execute solutions with validation
-6. **Verification**: Confirm resolution and document learnings
-
-### Research-First Methodology
-- Always research before implementing solutions
-- Use multiple information sources (documentation, examples, community)
-- Document findings and decision rationale
-- Validate assumptions through testing
-
-## Architecture Design Process
-
-### Component Design Template
-```
-## Component: [Name]
-**Responsibility**: One-sentence summary
-**Interfaces**: REST / gRPC / events
-**Dependencies**: [List]
-**Scaling**: Horizontal AutoScale / etc.
-**Failure Modes**: [Describe]
-```
-
-### Quality Attributes Planning Matrix
-| Attribute   | Strategy                                  |
-|-------------|-------------------------------------------|
-| Scalability | Stateless services + autoscaling groups   |
-| Performance | In-memory cache, async I/O                |
-| Security    | Zero-trust, least privilege, encryption   |
-| Reliability | Circuit breakers, retries, health probes  |
-| Observability | Structured logs, metrics, tracing      |
-
-## Architecture Lifecycle Management
-- Organize architecture docs in `docs/architecture/` with proper categorization
-- Maintain mandatory `index.md` files in every architecture folder
-- Enforce 700-line document size limit
-- Follow canonical structure for all architecture documents
-
-## Execution Standards
-
-### Decision Making Protocol
-1. **Research-First**: Always consult official documentation first
-2. **Multi-Source Validation**: Cross-check from at least two authoritative sources
-3. **Quality Over Speed**: Plan thoroughly, implement incrementally
-4. **Comprehensive Documentation**: Capture every decision in task documentation
-5. **Architecture Compliance**: Reference/update architecture docs for every significant change
-
-### Tool Usage Guidelines
-- **Context7**: Deep codebase pattern & dependency analysis
-- **Perplexity**: External best-practice & doc retrieval
-- **grep/rg**: Fast in-repo search for configs & patterns
-- **wc -l**: Enforce <700-line doc rule
-- **find**: Structure & file existence checks
-
-### Context Management
-- Optimize token usage through conditional documentation loading
-- Use progressive disclosure for complex investigations
-- Maintain context window efficiency
-- Implement task-specific guidance systems
 
 ## Success Metrics
 
@@ -358,9 +239,5 @@ Additional context and information.
 - **Accuracy**: Correct file selection for task requirements
 - **Completeness**: All necessary information accessed when needed
 - **Flexibility**: Ability to adapt to changing task requirements
-- **Problem Resolution**: Problem fully resolved & validated
-- **Knowledge Preservation**: Knowledge preserved in docs
-- **Process Improvement**: Process improvements captured
-- **Framework Scalability**: Framework scales with project complexity
 
 This system prompt should remain loaded throughout the session as the primary navigation tool for accessing detailed documentation only when specifically needed.

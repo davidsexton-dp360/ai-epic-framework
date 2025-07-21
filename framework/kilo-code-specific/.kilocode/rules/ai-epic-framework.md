@@ -1,4 +1,4 @@
-# AI Epic Framework - Windsurf Rules
+# AI Epic Framework - Kilo Code Rules
 
 ## AI Context Header
 **When To Use**: Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session.
@@ -418,4 +418,4 @@ grep -r "architecture" docs/architecture/
 - Problem fully resolved & validated
 - Knowledge preserved in docs
 - Process improvements captured
-- Framework scales with project complexity
+- Framework scales with project complexity 

@@ -1,0 +1,419 @@
+# AI Epic Framework - Trae Configuration
+
+rules:
+  - name: "AI Epic Framework - Main Navigation"
+    description: "Primary navigation hub for accessing other framework documentation"
+    conditions:
+      - file_pattern: "*.md"
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+      - file_pattern: "*.py"
+      - file_pattern: "*.java"
+    instructions:
+      - "Load as primary navigation hub for accessing other framework documentation"
+      - "Use for conditional loading decisions and optimizing context window usage"
+      - "Keep loaded throughout session"
+      - "Use systematic problem-solving approaches for complex issues"
+      - "Implement hierarchical task breakdown (Initiative → Epic → Phase → Step)"
+      - "Apply research-first methodology for architecture decisions"
+      - "Maintain comprehensive documentation and context management"
+      - "Focus on AI framework application rather than generic engineering principles"
+      - "Context-Aware Loading: Only load documentation when specifically needed for the current task"
+      - "Progressive Disclosure: Start with this system prompt, then conditionally load detailed documentation"
+      - "Token Efficiency: Avoid loading all files simultaneously to preserve context window"
+      - "Task-Specific Guidance: Match documentation to the specific workflow phase or problem type"
+
+  - name: "Decision Matrix - Epic Workflow Instructions"
+    description: "When to load epic workflow documentation"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/.epic-workflows/**"
+    instructions:
+      - "Load when user requests creation of new initiatives, epics, phases, or steps"
+      - "Load when questions about task hierarchy or folder structure"
+      - "Load when need to understand INDEX.md or REQUIREMENTS.md templates"
+      - "Load when creating or organizing workflow directory structure"
+      - "Load when delegation instructions or task execution flows are needed"
+      - "Key indicators: initiative, epic, phase, step, workflow, task hierarchy"
+      - "Key paths: /.epic-workflows/tasks/"
+      - "Key files: INDEX.md, REQUIREMENTS.md"
+
+  - name: "Decision Matrix - Architecture Lifecycle Management"
+    description: "When to load architecture lifecycle documentation"
+    conditions:
+      - directory_pattern: "**/docs/architecture/**"
+      - file_pattern: "*.md"
+    instructions:
+      - "Load when working with architecture documentation in docs/architecture/"
+      - "Load when creating or updating architecture index files"
+      - "Load when questions about document categorization or folder structure"
+      - "Load when need to understand architecture document size limits (700 lines)"
+      - "Load when managing architecture document lifecycle (creation, update, deprecation)"
+      - "Key indicators: architecture, documentation, index.md, categorization"
+      - "Key paths: docs/architecture/"
+      - "Key concerns: document size, breakdown requirements"
+
+  - name: "Decision Matrix - Architecture Design Process"
+    description: "When to load architecture design documentation"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/docs/architecture/**"
+    instructions:
+      - "Load when designing new system architecture or components"
+      - "Load when creating architecture proposals or technical designs"
+      - "Load when need guidance on research methodology for architecture decisions"
+      - "Load when questions about component design, integration patterns, or quality attributes"
+      - "Load when architecture review processes or validation requirements"
+      - "Key indicators: design, architecture proposal, component, integration, patterns"
+      - "Key activities: technical design discussions, system planning, technology stack selection"
+
+  - name: "Decision Matrix - Problem Solving Framework"
+    description: "When to load problem solving documentation"
+    conditions:
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+      - file_pattern: "*.py"
+      - file_pattern: "*.java"
+    instructions:
+      - "Load when user explicitly requests systematic problem analysis"
+      - "Load when multiple failed solution attempts (3+ cycles)"
+      - "Load when complex multi-component system failures"
+      - "Load when AI appears stuck in solution loops"
+      - "Load when need for comprehensive research and documentation approach"
+
+  - name: "Decision Matrix - General Execution Standards"
+    description: "When to load execution standards documentation"
+    conditions:
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+      - file_pattern: "*.py"
+      - file_pattern: "*.java"
+      - file_pattern: "*.md"
+    instructions:
+      - "Load when questions about general development practices or standards"
+      - "Load when file navigation and verification procedures needed"
+      - "Load when tool usage guidelines needed (Context7, Perplexity, Web search)"
+      - "Load when decision-making protocols or documentation requirements"
+      - "Load when general quality assurance or execution methodology"
+
+  - name: "Epic Workflow Management"
+    description: "Task hierarchy and workflow management"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/.epic-workflows/**"
+    instructions:
+      - "MANDATORY SEQUENCE: Plan → Document → Execute → Track → Validate"
+      - "Task Hierarchy: Initiative → Epic → Phase → Step (smallest actionable unit)"
+      - "Sequential numbering required (1, 2, 3, etc.)"
+      - "Each level must reference its parent task in all documentation"
+      - "Folder Naming: /.epic-workflows/tasks/[TASK_TYPE]_[NUMBER]_[TASK_NAME]/"
+      - "Generate entire folder hierarchy before work starts"
+      - "Every task directory must contain INDEX.md and REQUIREMENTS.md"
+      - "Break down complex projects into manageable epics"
+      - "Use INDEX.md and REQUIREMENTS.md templates for task organization"
+      - "Implement systematic delegation and execution flows"
+      - "Maintain progress tracking and status management"
+
+  - name: "Task Hierarchy Structure"
+    description: "Directory structure for task organization"
+    conditions:
+      - directory_pattern: "**/.epic-workflows/**"
+    instructions:
+      - "Initiative: /.epic-workflows/tasks/Initiative_[NUMBER]_[TASK_NAME]/"
+      - "Epic: /.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[TASK_NAME]/"
+      - "Phase: /.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[EPIC_NAME]/Phase_[NUMBER]_[TASK_NAME]/"
+      - "Step: /.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[EPIC_NAME]/Phase_[NUMBER]_[PHASE_NAME]/Step_[NUMBER]_[TASK_NAME]/"
+      - "TASK_TYPE: Initiative, Epic, Phase, Step"
+      - "TASK_NAME: Short, descriptive (max 5 words)"
+      - "NUMBER: Sequential ordering (1, 2, 3 …)"
+      - "Include INDEX.md and REQUIREMENTS.md in each task directory"
+      - "Use sequential numbering for task identification"
+      - "Maintain clear parent-child relationships"
+
+  - name: "Mandatory Goal Definition Requirements"
+    description: "Critical goal definition requirements for all tasks"
+    conditions:
+      - directory_pattern: "**/.epic-workflows/**"
+      - file_pattern: "*.md"
+    instructions:
+      - "CRITICAL: Every task at every level (Initiative, Epic, Phase, Step) MUST have clearly defined goals"
+      - "Business/Product Goal Requirements:"
+      - "  - Primary Business Objective: Clear, measurable business value statement"
+      - "  - Business Impact: Quantifiable impact on business metrics (revenue, user engagement, efficiency, etc.)"
+      - "  - User Value: Direct benefit delivered to end users"
+      - "  - Success Metrics: Specific, measurable outcomes that define success"
+      - "  - Parent Alignment: Explicit explanation of how this goal supports parent task's business objective"
+      - "Technical Goal Requirements:"
+      - "  - Primary Technical Objective: Clear, specific technical outcome statement"
+      - "  - Technical Impact: Measurable improvement to system (performance, security, maintainability, scalability)"
+      - "  - Implementation Scope: Clear boundaries of what will be built/modified"
+      - "  - Quality Standards: Specific performance, security, reliability requirements"
+      - "  - Parent Alignment: Explicit explanation of how this goal supports parent task's technical objective"
+
+  - name: "INDEX.md Template"
+    description: "Standard INDEX.md template for all tasks"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/.epic-workflows/**"
+    instructions:
+      - "# [Task Name] - Index"
+      - "## Overview: Brief description of the task and its objectives"
+      - "## Status: [ ] Not Started, [ ] In Progress, [ ] Completed, [ ] Blocked"
+      - "## Dependencies: List any dependencies or prerequisites"
+      - "## Deliverables: List expected outputs and deliverables"
+      - "## Notes: Additional context and information"
+
+  - name: "REQUIREMENTS.md Template"
+    description: "Standard REQUIREMENTS.md template for all tasks"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/.epic-workflows/**"
+    instructions:
+      - "# [Task Name] - Requirements"
+      - "## Functional Requirements: [Requirement 1], [Requirement 2]"
+      - "## Technical Requirements: [Technical requirement 1], [Technical requirement 2]"
+      - "## Acceptance Criteria: [Criterion 1], [Criterion 2]"
+      - "## Constraints: [Constraint 1], [Constraint 2]"
+
+  - name: "Problem Solving Framework"
+    description: "Systematic problem-solving methodology"
+    conditions:
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+      - file_pattern: "*.py"
+      - file_pattern: "*.java"
+    instructions:
+      - "Apply systematic analysis for stubborn technical issues"
+      - "Use research-first approach before solution implementation"
+      - "Document investigation processes and findings"
+      - "Implement solution validation and verification"
+      - "Systematic Analysis Process:"
+      - "  1. Problem Identification: Clearly define the issue and scope"
+      - "  2. Research Phase: Gather comprehensive information and context"
+      - "  3. Root Cause Analysis: Identify underlying causes and dependencies"
+      - "  4. Solution Development: Create systematic solution approaches"
+      - "  5. Implementation: Execute solutions with validation"
+      - "  6. Verification: Confirm resolution and document learnings"
+
+  - name: "Problem Analysis Template"
+    description: "Standard problem analysis report template"
+    conditions:
+      - file_pattern: "*.md"
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+    instructions:
+      - "## Problem Analysis Report"
+      - "### Problem Statement: [Clear, specific description of the issue]"
+      - "### Investigation Scope: Components Affected, User Impact, Business Impact"
+      - "### Research Findings: Documentation Review, Community Solutions, Similar Issues"
+      - "### Root Cause Analysis: Primary Cause, Contributing Factors, Dependencies"
+      - "### Solution Approach: Recommended Solution, Alternative Approaches, Implementation Plan"
+      - "### Validation Strategy: Testing Approach, Success Criteria, Rollback Plan"
+
+  - name: "Research-First Methodology"
+    description: "Research-driven approach to problem solving"
+    conditions:
+      - file_pattern: "*.md"
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+    instructions:
+      - "Always research before implementing solutions"
+      - "Use multiple information sources (documentation, examples, community)"
+      - "Document findings and decision rationale"
+      - "Validate assumptions through testing"
+      - "Cross-check information from at least two authoritative sources"
+
+  - name: "Architecture Design Process"
+    description: "Architecture design methodology and templates"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/docs/architecture/**"
+    instructions:
+      - "Research-First Architecture Methodology:"
+      - "  1. Research Phase: Gather comprehensive information about requirements, constraints, and existing solutions"
+      - "  2. Analysis Phase: Evaluate options against quality attributes and business requirements"
+      - "  3. Design Phase: Create detailed architecture proposals with clear rationale"
+      - "  4. Validation Phase: Review and validate design decisions"
+      - "  5. Documentation Phase: Create comprehensive architecture documentation"
+      - "Follow research methodology for architecture decisions"
+      - "Use component design templates and integration patterns"
+      - "Implement quality attribute analysis and trade-off evaluation"
+      - "Maintain architecture documentation lifecycle"
+      - "Start with requirements, constraints, and quality attributes"
+
+  - name: "Component Design Template"
+    description: "Standard component design structure"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/docs/architecture/**"
+    instructions:
+      - "## Component: [Name]"
+      - "**Responsibility**: One-sentence summary"
+      - "**Interfaces**: REST / gRPC / events"
+      - "**Dependencies**: [List]"
+      - "**Scaling**: Horizontal AutoScale / etc."
+      - "**Failure Modes**: [Describe]"
+      - "Define component responsibility in one sentence"
+      - "Specify interfaces (REST, gRPC, events)"
+      - "List dependencies clearly"
+      - "Define scaling strategy (Horizontal AutoScale, etc.)"
+      - "Document failure modes and handling"
+
+  - name: "Quality Attributes Planning Matrix"
+    description: "Quality attribute strategies for architecture"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/docs/architecture/**"
+    instructions:
+      - "Quality Attributes Planning Matrix:"
+      - "  Scalability: Stateless services + autoscaling groups"
+      - "  Performance: In-memory cache, async I/O"
+      - "  Security: Zero-trust, least privilege, encryption"
+      - "  Reliability: Circuit breakers, retries, health probes"
+      - "  Observability: Structured logs, metrics, tracing"
+
+  - name: "Architecture Decision Record Template"
+    description: "Standard architecture decision record template"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/docs/architecture/**"
+    instructions:
+      - "## Architecture Decision Record"
+      - "### Context: [Background and problem statement]"
+      - "### Decision: [Clear statement of the decision made]"
+      - "### Rationale: [Detailed explanation of why this decision was made]"
+      - "### Alternatives Considered: [List of alternatives with pros/cons]"
+      - "### Consequences: [Positive and negative consequences]"
+      - "### Implementation Notes: [Specific implementation guidance]"
+
+  - name: "Architecture Lifecycle Management"
+    description: "Architecture documentation management"
+    conditions:
+      - directory_pattern: "**/docs/architecture/**"
+      - file_pattern: "*.md"
+    instructions:
+      - "Document Organization Structure:"
+      - "  docs/architecture/"
+      - "  ├── index.md (mandatory)"
+      - "  ├── [category]/"
+      - "  │   ├── index.md (mandatory)"
+      - "  │   ├── [component].md"
+      - "  │   └── [component].md"
+      - "  └── [category]/"
+      - "      ├── index.md (mandatory)"
+      - "      └── [component].md"
+      - "Mandatory Requirements:"
+      - "  - Index Files: Every architecture folder must contain an index.md"
+      - "  - Document Size: Maximum 700 lines per document"
+      - "  - Categorization: Organize by system component or architectural concern"
+      - "  - Cross-References: Maintain links between related documents"
+      - "Document Lifecycle:"
+      - "  1. Creation: New documents follow canonical structure"
+      - "  2. Updates: Track changes and maintain version history"
+      - "  3. Deprecation: Mark obsolete documents clearly"
+      - "  4. Archival: Move deprecated documents to archive folder"
+      - "Organize architecture docs in docs/architecture/ with proper categorization"
+      - "Maintain mandatory index.md files in every architecture folder"
+      - "Enforce 700-line document size limit"
+      - "Follow canonical structure for all architecture documents"
+      - "Use logical sub-folders grouped by domain or category"
+
+  - name: "Architecture Discovery Commands"
+    description: "Useful commands for architecture document discovery"
+    conditions:
+      - file_pattern: "*.md"
+      - directory_pattern: "**/docs/architecture/**"
+    instructions:
+      - "Find all architecture documents: find docs/architecture/ -name '*.md' -type f"
+      - "Check document sizes: find docs/architecture/ -name '*.md' -exec wc -l {} \\;"
+      - "Find missing index files: find docs/architecture/ -type d -exec test ! -f {}/index.md \\; -print"
+      - "Search architecture content: grep -r 'architecture' docs/architecture/"
+
+  - name: "Execution Standards"
+    description: "Quality assurance and execution methodology"
+    conditions:
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+      - file_pattern: "*.py"
+      - file_pattern: "*.java"
+      - file_pattern: "*.md"
+    instructions:
+      - "Follow file navigation and verification procedures"
+      - "Use appropriate tools (Context7, Perplexity, Web search)"
+      - "Implement decision-making protocols and documentation requirements"
+      - "Maintain quality assurance and execution methodology"
+      - "Plan thoroughly, implement incrementally"
+
+  - name: "Decision Making Protocol"
+    description: "Systematic decision-making process"
+    conditions:
+      - file_pattern: "*.md"
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+    instructions:
+      - "Research-First: Always consult official documentation first"
+      - "Multi-Source Validation: Cross-check from at least two authoritative sources"
+      - "Quality Over Speed: Plan thoroughly, implement incrementally"
+      - "Comprehensive Documentation: Capture every decision in task documentation"
+      - "Architecture Compliance: Reference/update architecture docs for every significant change"
+
+  - name: "Tool Usage Guidelines"
+    description: "Guidelines for using development tools"
+    conditions:
+      - file_pattern: "*.md"
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+    instructions:
+      - "Context7: Deep codebase pattern & dependency analysis"
+      - "Perplexity: External best-practice & doc retrieval"
+      - "grep/rg: Fast in-repo search for configs & patterns"
+      - "wc -l: Enforce <700-line doc rule"
+      - "find: Structure & file existence checks"
+
+  - name: "File Navigation and Verification"
+    description: "File navigation and verification procedures"
+    conditions:
+      - file_pattern: "*.md"
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+    instructions:
+      - "Existence Check: Verify files exist before referencing"
+      - "Content Validation: Ensure content matches expectations"
+      - "Path Verification: Confirm relative paths are correct"
+      - "Format Compliance: Validate against IDE-specific requirements"
+
+  - name: "Quality Assurance Standards"
+    description: "Quality assurance standards for all work"
+    conditions:
+      - file_pattern: "*.ts"
+      - file_pattern: "*.js"
+      - file_pattern: "*.py"
+      - file_pattern: "*.java"
+      - file_pattern: "*.md"
+    instructions:
+      - "Documentation: Every significant decision must be documented"
+      - "Testing: All changes must include appropriate tests"
+      - "Review: Code and documentation changes require review"
+      - "Validation: Verify changes work as expected"
+
+  - name: "Context Management"
+    description: "Token optimization and context management"
+    conditions:
+      - file_pattern: "*.md"
+    instructions:
+      - "Optimize token usage through conditional documentation loading"
+      - "Use progressive disclosure for complex investigations"
+      - "Maintain context window efficiency"
+      - "Implement task-specific guidance systems"
+      - "Load files just-in-time, not proactively"
+
+  - name: "Success Metrics"
+    description: "Framework success measurement"
+    conditions:
+      - file_pattern: "*.md"
+    instructions:
+      - "Problem fully resolved & validated"
+      - "Knowledge preserved in docs"
+      - "Process improvements captured"
+      - "Framework scales with project complexity"
+      - "Efficiency: Minimal token usage while maintaining effectiveness" 

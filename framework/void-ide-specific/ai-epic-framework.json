@@ -1,0 +1,378 @@
+{
+  "version": "1.0",
+  "name": "AI Epic Framework",
+  "description": "Systematic approaches for AI assistants to help developers build complex applications",
+  "aiContextHeader": {
+    "whenToUse": "Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session."
+  },
+  "framework": {
+    "overview": "The AI Epic Framework provides systematic approaches for AI assistants to help developers build complex applications through structured workflows, problem-solving methodologies, and architecture design processes.",
+    "corePrinciples": [
+      "Context-Aware Loading: Only load documentation when specifically needed for the current task",
+      "Progressive Disclosure: Start with this system prompt, then conditionally load detailed documentation",
+      "Token Efficiency: Avoid loading all files simultaneously to preserve context window",
+      "Task-Specific Guidance: Match documentation to the specific workflow phase or problem type",
+      "Use systematic problem-solving approaches for complex issues",
+      "Implement hierarchical task breakdown (Initiative → Epic → Phase → Step)",
+      "Apply research-first methodology for architecture decisions",
+      "Maintain comprehensive documentation and context management",
+      "Focus on AI framework application rather than generic engineering principles"
+    ]
+  },
+  "decisionMatrix": {
+    "epicWorkflowInstructions": {
+      "loadWhen": [
+        "User requests creation of new initiatives, epics, phases, or steps",
+        "Questions about task hierarchy or folder structure",
+        "Need to understand INDEX.md or REQUIREMENTS.md templates",
+        "Creating or organizing workflow directory structure",
+        "Delegation instructions or task execution flows are needed"
+      ],
+      "keyIndicators": {
+        "keywords": ["initiative", "epic", "phase", "step", "workflow", "task hierarchy"],
+        "directoryPaths": ["/.epic-workflows/tasks/"],
+        "fileReferences": ["INDEX.md", "REQUIREMENTS.md"],
+        "activities": ["Task status tracking or progress management"]
+      }
+    },
+    "architectureLifecycleManagement": {
+      "loadWhen": [
+        "Working with architecture documentation in docs/architecture/",
+        "Creating or updating architecture index files",
+        "Questions about document categorization or folder structure",
+        "Need to understand architecture document size limits (700 lines)",
+        "Managing architecture document lifecycle (creation, update, deprecation)"
+      ],
+      "keyIndicators": {
+        "keywords": ["architecture", "documentation", "index.md", "categorization"],
+        "directoryPaths": ["docs/architecture/"],
+        "concerns": ["Document size concerns or breakdown requirements", "Architecture discovery or search commands needed"]
+      }
+    },
+    "architectureDesignProcess": {
+      "loadWhen": [
+        "Designing new system architecture or components",
+        "Creating architecture proposals or technical designs",
+        "Need guidance on research methodology for architecture decisions",
+        "Questions about component design, integration patterns, or quality attributes",
+        "Architecture review processes or validation requirements"
+      ],
+      "keyIndicators": {
+        "keywords": ["design", "architecture proposal", "component", "integration", "patterns"],
+        "activities": ["Technical design discussions or system planning", "Technology stack selection or evaluation", "Architecture validation or review processes"]
+      }
+    },
+    "problemSolvingFramework": {
+      "loadWhen": [
+        "User explicitly requests systematic problem analysis",
+        "Multiple failed solution attempts (3+ cycles)",
+        "Complex multi-component system failures",
+        "AI appears stuck in solution loops",
+        "Need for comprehensive research and documentation approach"
+      ]
+    },
+    "generalExecutionStandards": {
+      "loadWhen": [
+        "Questions about general development practices or standards",
+        "File navigation and verification procedures",
+        "Tool usage guidelines (Context7, Perplexity, Web search)",
+        "Decision-making protocols or documentation requirements",
+        "General quality assurance or execution methodology"
+      ]
+    }
+  },
+  "epicWorkflow": {
+    "description": "Task hierarchy and workflow management",
+    "mandatorySequence": "Plan → Document → Execute → Track → Validate",
+    "taskHierarchy": {
+      "structure": "Initiative → Epic → Phase → Step (smallest actionable unit)",
+      "requirements": [
+        "Sequential numbering required (1, 2, 3, etc.)",
+        "Each level must reference its parent task in all documentation"
+      ],
+      "directoryStructure": {
+        "folderNamingConvention": "/.epic-workflows/tasks/[TASK_TYPE]_[NUMBER]_[TASK_NAME]/",
+        "hierarchicalStructure": {
+          "initiative": "/.epic-workflows/tasks/Initiative_[NUMBER]_[TASK_NAME]/",
+          "epic": "/.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[TASK_NAME]/",
+          "phase": "/.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[EPIC_NAME]/Phase_[NUMBER]_[TASK_NAME]/",
+          "step": "/.epic-workflows/tasks/Initiative_[NUMBER]_[INITIATIVE_NAME]/Epic_[NUMBER]_[EPIC_NAME]/Phase_[NUMBER]_[PHASE_NAME]/Step_[NUMBER]_[TASK_NAME]/"
+        },
+        "namingRules": {
+          "taskType": ["Initiative", "Epic", "Phase", "Step"],
+          "taskName": "Short, descriptive (max 5 words)",
+          "number": "Sequential ordering (1, 2, 3 …)",
+          "parentNames": "Short names of their respective parent tasks"
+        }
+      },
+      "preExecutionRequirements": {
+        "mandatoryTaskCreation": [
+          "Generate the entire folder hierarchy in /.epic-workflows/tasks/ before work starts",
+          "Every task directory must contain INDEX.md and REQUIREMENTS.md"
+        ],
+        "mandatoryGoalDefinition": {
+          "critical": "Every task at every level (Initiative, Epic, Phase, Step) MUST have clearly defined goals",
+          "businessProductGoals": {
+            "primaryBusinessObjective": "Clear, measurable business value statement",
+            "businessImpact": "Quantifiable impact on business metrics (revenue, user engagement, efficiency, etc.)",
+            "userValue": "Direct benefit delivered to end users",
+            "successMetrics": "Specific, measurable outcomes that define success",
+            "parentAlignment": "Explicit explanation of how this goal supports parent task's business objective"
+          },
+          "technicalGoals": {
+            "primaryTechnicalObjective": "Clear, specific technical outcome statement",
+            "technicalImpact": "Measurable improvement to system (performance, security, maintainability, scalability)",
+            "implementationScope": "Clear boundaries of what will be built/modified",
+            "qualityStandards": "Specific performance, security, reliability requirements",
+            "parentAlignment": "Explicit explanation of how this goal supports parent task's technical objective"
+          }
+        }
+      },
+      "management": [
+        "Break down complex projects into manageable epics",
+        "Use INDEX.md and REQUIREMENTS.md templates for task organization",
+        "Implement systematic delegation and execution flows",
+        "Maintain progress tracking and status management"
+      ],
+      "templates": {
+        "indexMd": {
+          "title": "[Task Name] - Index",
+          "sections": [
+            "Overview: Brief description of the task and its objectives",
+            "Status: [ ] Not Started, [ ] In Progress, [ ] Completed, [ ] Blocked",
+            "Dependencies: List any dependencies or prerequisites",
+            "Deliverables: List expected outputs and deliverables",
+            "Notes: Additional context and information"
+          ]
+        },
+        "requirementsMd": {
+          "title": "[Task Name] - Requirements",
+          "sections": [
+            "Functional Requirements: [Requirement 1], [Requirement 2]",
+            "Technical Requirements: [Technical requirement 1], [Technical requirement 2]",
+            "Acceptance Criteria: [Criterion 1], [Criterion 2]",
+            "Constraints: [Constraint 1], [Constraint 2]"
+          ]
+        }
+      }
+    }
+  },
+  "problemSolving": {
+    "description": "Systematic problem-solving methodology",
+    "whenToUse": [
+      "User explicitly requests systematic problem analysis",
+      "Multiple failed solution attempts (3+ cycles)",
+      "Complex multi-component system failures",
+      "AI appears stuck in solution loops",
+      "Need for comprehensive research and documentation approach"
+    ],
+    "framework": [
+      "Apply systematic analysis for stubborn technical issues",
+      "Use research-first approach before solution implementation",
+      "Document investigation processes and findings",
+      "Implement solution validation and verification"
+    ],
+    "systematicAnalysisProcess": [
+      "Problem Identification: Clearly define the issue and scope",
+      "Research Phase: Gather comprehensive information and context",
+      "Root Cause Analysis: Identify underlying causes and dependencies",
+      "Solution Development: Create systematic solution approaches",
+      "Implementation: Execute solutions with validation",
+      "Verification: Confirm resolution and document learnings"
+    ],
+    "researchFirstMethodology": [
+      "Always research before implementing solutions",
+      "Use multiple information sources (documentation, examples, community)",
+      "Document findings and decision rationale",
+      "Validate assumptions through testing"
+    ],
+    "problemAnalysisTemplate": {
+      "title": "Problem Analysis Report",
+      "sections": {
+        "problemStatement": "[Clear, specific description of the issue]",
+        "investigationScope": {
+          "componentsAffected": "[List]",
+          "userImpact": "[Description]",
+          "businessImpact": "[Description]"
+        },
+        "researchFindings": {
+          "documentationReview": "[Findings]",
+          "communitySolutions": "[Findings]",
+          "similarIssues": "[Findings]"
+        },
+        "rootCauseAnalysis": {
+          "primaryCause": "[Description]",
+          "contributingFactors": "[List]",
+          "dependencies": "[List]"
+        },
+        "solutionApproach": {
+          "recommendedSolution": "[Description]",
+          "alternativeApproaches": "[List]",
+          "implementationPlan": "[Steps]"
+        },
+        "validationStrategy": {
+          "testingApproach": "[Description]",
+          "successCriteria": "[List]",
+          "rollbackPlan": "[Description]"
+        }
+      }
+    }
+  },
+  "architectureDesign": {
+    "description": "Architecture design methodology and templates",
+    "whenToUse": [
+      "Designing new system architecture or components",
+      "Creating architecture proposals or technical designs",
+      "Need guidance on research methodology for architecture decisions",
+      "Questions about component design, integration patterns, or quality attributes",
+      "Architecture review processes or validation requirements"
+    ],
+    "researchFirstArchitectureMethodology": [
+      "Research Phase: Gather comprehensive information about requirements, constraints, and existing solutions",
+      "Analysis Phase: Evaluate options against quality attributes and business requirements",
+      "Design Phase: Create detailed architecture proposals with clear rationale",
+      "Validation Phase: Review and validate design decisions",
+      "Documentation Phase: Create comprehensive architecture documentation"
+    ],
+    "process": [
+      "Follow research methodology for architecture decisions",
+      "Use component design templates and integration patterns",
+      "Implement quality attribute analysis and trade-off evaluation",
+      "Maintain architecture documentation lifecycle"
+    ],
+    "componentDesignTemplate": {
+      "name": "[Name]",
+      "responsibility": "One-sentence summary",
+      "interfaces": "REST / gRPC / events",
+      "dependencies": "[List]",
+      "scaling": "Horizontal AutoScale / etc.",
+      "failureModes": "[Describe]"
+    },
+    "qualityAttributes": {
+      "scalability": "Stateless services + autoscaling groups",
+      "performance": "In-memory cache, async I/O",
+      "security": "Zero-trust, least privilege, encryption",
+      "reliability": "Circuit breakers, retries, health probes",
+      "observability": "Structured logs, metrics, tracing"
+    },
+    "architectureDecisionRecordTemplate": {
+      "title": "Architecture Decision Record",
+      "sections": {
+        "context": "[Background and problem statement]",
+        "decision": "[Clear statement of the decision made]",
+        "rationale": "[Detailed explanation of why this decision was made]",
+        "alternativesConsidered": "[List of alternatives with pros/cons]",
+        "consequences": "[Positive and negative consequences]",
+        "implementationNotes": "[Specific implementation guidance]"
+      }
+    }
+  },
+  "architectureLifecycle": {
+    "description": "Architecture documentation management",
+    "whenToUse": [
+      "Working with architecture documentation in docs/architecture/",
+      "Creating or updating architecture index files",
+      "Questions about document categorization or folder structure",
+      "Need to understand architecture document size limits (700 lines)",
+      "Managing architecture document lifecycle (creation, update, deprecation)"
+    ],
+    "documentOrganizationStructure": {
+      "root": "docs/architecture/",
+      "structure": {
+        "indexMd": "index.md (mandatory)",
+        "categories": {
+          "category": "[category]/",
+          "indexMd": "index.md (mandatory)",
+          "components": ["[component].md", "[component].md"]
+        }
+      }
+    },
+    "mandatoryRequirements": {
+      "indexFiles": "Every architecture folder must contain an index.md",
+      "documentSize": "Maximum 700 lines per document",
+      "categorization": "Organize by system component or architectural concern",
+      "crossReferences": "Maintain links between related documents"
+    },
+    "documentLifecycle": [
+      "Creation: New documents follow canonical structure",
+      "Updates: Track changes and maintain version history",
+      "Deprecation: Mark obsolete documents clearly",
+      "Archival: Move deprecated documents to archive folder"
+    ],
+    "architectureDiscoveryCommands": {
+      "findAllDocuments": "find docs/architecture/ -name '*.md' -type f",
+      "checkDocumentSizes": "find docs/architecture/ -name '*.md' -exec wc -l {} \\;",
+      "findMissingIndexFiles": "find docs/architecture/ -type d -exec test ! -f {}/index.md \\; -print",
+      "searchArchitectureContent": "grep -r 'architecture' docs/architecture/"
+    },
+    "management": [
+      "Organize architecture docs in docs/architecture/ with proper categorization",
+      "Maintain mandatory index.md files in every architecture folder",
+      "Enforce 700-line document size limit",
+      "Follow canonical structure for all architecture documents"
+    ]
+  },
+  "generalExecutionStandards": {
+    "description": "Quality assurance and execution methodology",
+    "whenToUse": [
+      "Questions about general development practices or standards",
+      "File navigation and verification procedures",
+      "Tool usage guidelines (Context7, Perplexity, Web search)",
+      "Decision-making protocols or documentation requirements",
+      "General quality assurance or execution methodology"
+    ],
+    "decisionMakingProtocol": [
+      "Research-First: Always consult official documentation first",
+      "Multi-Source Validation: Cross-check from at least two authoritative sources",
+      "Quality Over Speed: Plan thoroughly, implement incrementally",
+      "Comprehensive Documentation: Capture every decision in task documentation",
+      "Architecture Compliance: Reference/update architecture docs for every significant change"
+    ],
+    "toolUsageGuidelines": {
+      "context7": "Deep codebase pattern & dependency analysis",
+      "perplexity": "External best-practice & doc retrieval",
+      "grepRg": "Fast in-repo search for configs & patterns",
+      "wcL": "Enforce <700-line doc rule",
+      "find": "Structure & file existence checks"
+    },
+    "fileNavigationAndVerification": [
+      "Existence Check: Verify files exist before referencing",
+      "Content Validation: Ensure content matches expectations",
+      "Path Verification: Confirm relative paths are correct",
+      "Format Compliance: Validate against IDE-specific requirements"
+    ],
+    "qualityAssuranceStandards": {
+      "documentation": "Every significant decision must be documented",
+      "testing": "All changes must include appropriate tests",
+      "review": "Code and documentation changes require review",
+      "validation": "Verify changes work as expected"
+    },
+    "execution": [
+      "Follow file navigation and verification procedures",
+      "Use appropriate tools (Context7, Perplexity, Web search)",
+      "Implement decision-making protocols and documentation requirements",
+      "Maintain quality assurance and execution methodology"
+    ]
+  },
+  "contextManagement": {
+    "description": "Token optimization and context management",
+    "strategies": [
+      "Optimize token usage through conditional documentation loading",
+      "Use progressive disclosure for complex investigations",
+      "Maintain context window efficiency",
+      "Implement task-specific guidance systems"
+    ]
+  },
+  "whenToUseThisFramework": [
+    "Load when creating new initiatives, epics, phases, or steps",
+    "Use for task hierarchy questions, folder structure organization, or workflow management",
+    "Apply when facing stubborn technical issues or complex system failures",
+    "Use when designing new system architecture or making technical decisions"
+  ],
+  "successMetrics": [
+    "Problem fully resolved & validated",
+    "Knowledge preserved in docs",
+    "Process improvements captured",
+    "Framework scales with project complexity"
+  ]
+} 

@@ -1,7 +1,6 @@
-# Roo Code ignore patterns
+# Roo Code ignore file for AI Epic Framework
 node_modules/
-.git/
 dist/
 build/
 *.log
-.env
+.DS_Store
