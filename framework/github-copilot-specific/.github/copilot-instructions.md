@@ -1,0 +1,247 @@
+# GitHub Copilot Instructions
+
+<!-- This is your main user prompt. Usually you copy this to your system or main user prompt of your AI Agent or Coding Tool -->
+# AI Agent System Prompt: Epic Workflow & Architecture Documentation
+
+## AI Context Header
+**When To Use**: Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session.
+
+**Sample Queries**:
+1. "Which documentation should I load for architecture design work?"
+2. "How do I efficiently manage context window when working on epic workflows?"
+3. "What's the decision matrix for loading problem-solving versus execution standards?"
+
+## Framework Navigation
+- **Epic Workflow**: [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Complete workflow management system
+- **Problem Solving**: [problem-solving-framework.md](./problem-solving-framework.md) - Systematic troubleshooting approach
+- **Execution Standards**: [general-execution-standards.md](./general-execution-standards.md) - Quality and decision-making protocols
+- **Architecture Lifecycle**: [architecture-lifecycle.md](./architecture-lifecycle.md) - Architecture documentation management
+- **Architecture Design**: [architecture-design-process.md](./architecture-design-process.md) - Design methodology and templates
+
+## Overview
+
+This system prompt provides conditional guidance for AI agents to selectively load specific documentation files based on task context, optimizing token usage while maintaining access to comprehensive workflow and architecture guidance.
+
+## Core Principles
+
+- **Context-Aware Loading**: Only load documentation when specifically needed for the current task
+- **Progressive Disclosure**: Start with this system prompt, then conditionally load detailed documentation
+- **Token Efficiency**: Avoid loading all files simultaneously to preserve context window
+- **Task-Specific Guidance**: Match documentation to the specific workflow phase or problem type
+
+## Decision Matrix: When to Load Which Documentation
+
+### 1. Epic Workflow Instructions ([epic-workflow-instructions.md](./epic-workflow-instructions.md))
+
+**Load When:**
+- User requests creation of new initiatives, epics, phases, or steps
+- Questions about task hierarchy or folder structure
+- Need to understand INDEX.md or REQUIREMENTS.md templates
+- Creating or organizing workflow directory structure
+- Delegation instructions or task execution flows are needed
+
+**Key Indicators:**
+- Keywords: "initiative", "epic", "phase", "step", "workflow", "task hierarchy"
+- Directory paths: `/.epic-workflows/tasks/`
+- File references: `INDEX.md`, `REQUIREMENTS.md`
+- Task status tracking or progress management
+
+**Related Documentation:**
+- [general-execution-standards.md](./general-execution-standards.md) - Quality standards for epic execution
+- [architecture-lifecycle.md](./architecture-lifecycle.md) - Architecture integration during epics
+
+### 2. Architecture Lifecycle Management ([architecture-lifecycle.md](./architecture-lifecycle.md))
+
+**Load When:**
+- Working with architecture documentation in `docs/architecture/`
+- Creating or updating architecture index files
+- Questions about document categorization or folder structure
+- Need to understand architecture document size limits (700 lines)
+- Managing architecture document lifecycle (creation, update, deprecation)
+
+**Key Indicators:**
+- Keywords: "architecture", "documentation", "index.md", "categorization"
+- Directory paths: `docs/architecture/`
+- Document size concerns or breakdown requirements
+- Architecture discovery or search commands needed
+
+**Related Documentation:**
+- [architecture-design-process.md](./architecture-design-process.md) - Design methodology and component templates
+- [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Architecture integration in workflows
+
+### 3. Architecture Design Process ([architecture-design-process.md](./architecture-design-process.md))
+
+**Load When:**
+- Designing new system architecture or components
+- Creating architecture proposals or technical designs
+- Need guidance on research methodology for architecture decisions
+- Questions about component design, integration patterns, or quality attributes
+- Architecture review processes or validation requirements
+
+**Key Indicators:**
+- Keywords: "design", "architecture proposal", "component", "integration", "patterns"
+- Technical design discussions or system planning
+- Technology stack selection or evaluation
+- Architecture validation or review processes
+
+**Related Documentation:**
+- [architecture-lifecycle.md](./architecture-lifecycle.md) - Documentation structure and management
+- [general-execution-standards.md](./general-execution-standards.md) - Research and validation protocols
+
+### 4. Problem Solving Framework ([problem-solving-framework.md](./problem-solving-framework.md))
+
+**Load When:**
+- User explicitly requests systematic problem analysis
+- Multiple failed solution attempts (3+ cycles)
+- Complex multi-component system failures
+- AI appears stuck in solution loops
+- Need for comprehensive research and documentation approach
+
+**Related Documentation:**
+- [general-execution-standards.md](./general-execution-standards.md) - Research protocols and quality standards
+- [architecture-design-process.md](./architecture-design-process.md) - Component analysis methodology
+
+**Key Indicators:**
+- Keywords: "problem solving", "debugging", "systematic analysis", "research"
+- Multiple failed attempts mentioned
+- Complex technical issues spanning multiple components
+- Request for structured troubleshooting approach
+
+### 5. General Execution Standards ([general-execution-standards.md](./general-execution-standards.md))
+
+**Load When:**
+- Questions about general development practices or standards
+- File navigation and verification procedures
+- Tool usage guidelines (Context7, Perplexity, Web search)
+- Decision-making protocols or documentation requirements
+- General quality assurance or execution methodology
+
+**Key Indicators:**
+- Keywords: "standards", "best practices", "file navigation", "tools"
+- General methodology questions
+- Quality assurance or documentation standards
+- Cross-cutting concerns not specific to other categories
+
+**Related Documentation:**
+- [problem-solving-framework.md](./problem-solving-framework.md) - Systematic troubleshooting approach
+- [architecture-design-process.md](./architecture-design-process.md) - Research and validation methodology
+- [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Quality standards for workflow execution
+
+## Conditional Loading Logic
+
+### Primary Decision Flow
+
+1. **Identify Task Type**
+   - Workflow management → Load `epic-workflow-instructions.md`
+   - Architecture documentation → Load `architecture-lifecycle.md`
+   - System design → Load `architecture-design-process.md`
+   - Problem solving → Load `problem-solving-framework.md`
+   - General practices → Load `general-execution-standards.md`
+
+2. **Check for Multiple Needs**
+   - If task spans multiple areas, load primary file first
+   - Load additional files only when specifically needed
+   - Prioritize based on immediate task requirements
+
+3. **Progressive Loading**
+   - Start with most relevant single file
+   - Load additional files only when current file lacks needed information
+   - Unload files when no longer needed for current task
+
+### Secondary Decision Factors
+
+- **User Experience Level**: New users may need more comprehensive guidance
+- **Task Complexity**: Complex tasks may require multiple file references
+- **Context Window**: Available tokens determine how much can be loaded
+- **Task Phase**: Different phases may require different documentation
+
+## Usage Instructions for AI Agents
+
+### Step 1: Initial Assessment
+```
+1. Analyze user query for key indicators
+2. Identify primary task category
+3. Determine if single file or multiple files needed
+4. Check context window availability
+```
+
+### Step 2: File Selection
+```
+1. Select primary file based on decision matrix
+2. Load only the most relevant file initially
+3. Note potential secondary files for later loading
+4. Confirm file selection matches task requirements
+```
+
+### Step 3: Conditional Loading
+```
+1. Load primary file when task requires detailed guidance
+2. Reference this system prompt for quick decisions
+3. Load additional files only when gaps identified
+4. Document which files were loaded and why
+```
+
+### Step 4: Context Management
+```
+1. Monitor context window usage
+2. Unload files when no longer needed
+3. Prioritize active task requirements
+4. Maintain this system prompt throughout session
+```
+
+## Quick Reference Commands
+
+### File Discovery
+```bash
+# Find workflow tasks
+find /.epic-workflows/tasks/ -name "*[TASK_TYPE]*" -type d
+
+# Find architecture docs
+find docs/architecture/ -name "*.md" | grep -i [TOPIC]
+
+# Check file existence before loading
+ls -la /.epic-workflows/tasks/[TASK_TYPE]_[NUMBER]_[TASK_NAME]/
+ls -la docs/architecture/[CATEGORY]/
+```
+
+### Context Efficiency Tips
+- Load files just-in-time, not proactively
+- Use this system prompt for quick decisions
+- Reference specific sections rather than entire files when possible
+- Combine multiple small queries rather than loading large files
+
+## Emergency Protocols
+
+### When Multiple Files Needed
+1. Load most critical file first
+2. Extract key information quickly
+3. Unload and load next file
+4. Synthesize information from memory
+
+### When Context Window Full
+1. Prioritize current task requirements
+2. Unload non-essential files
+3. Keep this system prompt loaded
+4. Use progressive disclosure strategy
+
+### When Unsure Which File
+1. Default to `general-execution-standards.md`
+2. Use decision matrix to refine selection
+3. Load most specific file for task
+4. Reference this system prompt for guidance
+
+## Success Metrics
+
+- **Efficiency**: Minimal token usage while maintaining effectiveness
+- **Accuracy**: Correct file selection for task requirements
+- **Completeness**: All necessary information accessed when needed
+- **Flexibility**: Ability to adapt to changing task requirements
+
+This system prompt should remain loaded throughout the session as the primary navigation tool for accessing detailed documentation only when specifically needed.
+
+
+## GitHub Copilot Integration
+These instructions guide GitHub Copilot's behavior in this repository.
+- Place this file at `.github/copilot-instructions.md`
+- Works with Copilot Chat, Copilot Agent, and inline suggestions
+- Supports repository-level and workspace-level configuration

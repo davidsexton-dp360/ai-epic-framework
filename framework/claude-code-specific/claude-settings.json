@@ -1,0 +1,8 @@
+auto_approve: false
+enterprise:
+  privacy: enhanced
+  security: high
+max_tokens: 4096
+model: claude-3-5-sonnet-20241022
+system_message_file: claude-config.md
+temperature: 0.1

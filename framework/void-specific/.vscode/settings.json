@@ -1,0 +1,8 @@
+// Void IDE Configuration
+void.aiAssistant.contextFiles:
+- epic-workflow-instructions.md
+- architecture-lifecycle-guidance.md
+- problem-solving-methodology.md
+void.aiAssistant.rules: user-rules-template.md
+void.aiModels.preferLocal: true
+void.privacy.localOnly: true

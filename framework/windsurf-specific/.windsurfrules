@@ -1,0 +1,113 @@
+<!-- This is your main user prompt. Usually you copy this to your system or main user prompt of your AI Agent or Coding Tool -->
+# AI Agent System Prompt: Epic Workflow & Architecture Documentation
+
+## AI Context Header
+**When To Use**: Load as primary navigation hub for accessing other framework documentation. Use for conditional loading decisions and optimizing context window usage. Keep loaded throughout session.
+
+**Sample Queries**:
+1. "Which documentation should I load for architecture design work?"
+2. "How do I efficiently manage context window when working on epic workflows?"
+3. "What's the decision matrix for loading problem-solving versus execution standards?"
+
+## Framework Navigation
+- **Epic Workflow**: [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Complete workflow management system
+- **Problem Solving**: [problem-solving-framework.md](./problem-solving-framework.md) - Systematic troubleshooting approach
+- **Execution Standards**: [general-execution-standards.md](./general-execution-standards.md) - Quality and decision-making protocols
+- **Architecture Lifecycle**: [architecture-lifecycle.md](./architecture-lifecycle.md) - Architecture documentation management
+- **Architecture Design**: [architecture-design-process.md](./architecture-design-process.md) - Design methodology and templates
+
+## Overview
+
+This system prompt provides conditional guidance for AI agents to selectively load specific documentation files based on task context, optimizing token usage while maintaining access to comprehensive workflow and architecture guidance.
+
+## Core Principles
+
+- **Context-Aware Loading**: Only load documentation when specifically needed for the current task
+- **Progressive Disclosure**: Start with this system prompt, then conditionally load detailed documentation
+- **Token Efficiency**: Avoid loading all files simultaneously to preserve context window
+- **Task-Specific Guidance**: Match documentation to the specific workflow phase or problem type
+
+## Decision Matrix: When to Load Which Documentation
+
+### 1. Epic Workflow Instructions ([epic-workflow-instructions.md](./epic-workflow-instructions.md))
+
+**Load When:**
+- User requests creation of new initiatives, epics, phases, or steps
+- Questions about task hierarchy or folder structure
+- Need to understand INDEX.md or REQUIREMENTS.md templates
+- Creating or organizing workflow directory structure
+- Delegation instructions or task execution flows are needed
+
+**Key Indicators:**
+- Keywords: "initiative", "epic", "phase", "step", "workflow", "task hierarchy"
+- Directory paths: `/.epic-workflows/tasks/`
+- File references: `INDEX.md`, `REQUIREMENTS.md`
+- Task status tracking or progress management
+
+**Related Documentation:**
+- [general-execution-standards.md](./general-execution-standards.md) - Quality standards for epic execution
+- [architecture-lifecycle.md](./architecture-lifecycle.md) - Architecture integration during epics
+
+### 2. Architecture Lifecycle Management ([architecture-lifecycle.md](./architecture-lifecycle.md))
+
+**Load When:**
+- Working with architecture documentation in `docs/architecture/`
+- Creating or updating architecture index files
+- Questions about document categorization or folder structure
+- Need to understand architecture document size limits (700 lines)
+- Managing architecture document lifecycle (creation, update, deprecation)
+
+**Key Indicators:**
+- Keywords: "architecture", "documentation", "index.md", "categorization"
+- Directory paths: `docs/architecture/`
+- Document size concerns or breakdown requirements
+- Architecture discovery or search commands needed
+
+**Related Documentation:**
+- [architecture-design-process.md](./architecture-design-process.md) - Design methodology and component templates
+- [epic-workflow-instructions.md](./epic-workflow-instructions.md) - Architecture integration in workflows
+
+### 3. Architecture Design Process ([architecture-design-process.md](./architecture-design-process.md))
+
+**Load When:**
+- Designing new system architecture or components
+- Creating architecture proposals or technical designs
+- Need guidance on research methodology for architecture decisions
+- Questions about component design, integration patterns, or quality attributes
+- Architecture review processes or validation requirements
+
+**Key Indicators:**
+- Keywords: "design", "architecture proposal", "component", "integration", "patterns"
+- Technical design discussions or system planning
+- Technology stack selection or evaluation
+- Architecture validation or review processes
+
+**Related Documentation:**
+- [architecture-lifecycle.md](./architecture-lifecycle.md) - Documentation structure and management
+- [general-execution-standards.md](./general-execution-standards.md) - Research and validation protocols
+
+### 4. Problem Solving Framework ([problem-solving-framework.md](./problem-solving-framework.md))
+
+**Load When:**
+- User explicitly requests systematic problem analysis
+- Multiple failed solution attempts (3+ cycles)
+- Complex multi-component system failures
+- AI appears stuck in solution loops
+- Need for comprehensive research and documentation approach
+
+**Related Documentation:**
+- [general-execution-standards.md](./general-execution-standards.md) - Research protocols and quality standards
+- [architecture-design-process.md](./architecture-design-process.md) - Component analysis methodology
+
+**Key Indicators:**
+- Keywords: "problem solving", "debugging", "systematic analysis", "research"
+- Multiple failed attempts mentioned
+- Complex technical issues spanning multiple components
+- Request for structured troubleshooting approach
+
+### 5. General Execution Standards ([general-execution-standards.md](./general-execution-standards.md))
+
+**Load When:**
+- Questions about general development practices or stan
+
+[Content truncated due to Windsurf 6000 character limit]
