@@ -24,6 +24,7 @@ import os
 import shutil
 import re
 from pathlib import Path
+import argparse
 
 class IDEAdaptationGenerator:
     def __init__(self):
@@ -1487,7 +1488,7 @@ See `gemini-config.json` and `google-cloud-integration.json` for detailed config
         
         print(f"✅ Created Gemini CLI configuration files")
 
-    def generate_all_adaptations(self):
+    def generate_configured_adaptations(self):
         """Generate all IDE adaptations."""
         print("🚀 Generating AI Epic Framework IDE Adaptations...")
         print("=" * 60)
@@ -1515,7 +1516,24 @@ See `gemini-config.json` and `google-cloud-integration.json` for detailed config
 def main():
     """Main function to run the IDE adaptation generator."""
     generator = IDEAdaptationGenerator()
-    generator.generate_all_adaptations()
+    
+    parser = argparse.ArgumentParser(description="Run the IDE adaptation generator.")
+    parser.add_argument('--ide', type=str, help="Specify the IDE to generate adaptation for")
+    args = parser.parse_args()
+
+    if args.ide:
+        ide_arg = args.ide.strip().lower()
+        match_key = f"{ide_arg}-specific"
+
+        if match_key in generator.ide_configs:
+            print(f"🚀 Generating adaptation for: {match_key}")
+            # Keep only the selected IDE config
+            generator.ide_configs = {match_key: generator.ide_configs[match_key]}
+        else:
+            print(f"❌ Unknown IDE: {ide_arg}")
+            return
+
+    generator.generate_configured_adaptations()
 
 if __name__ == "__main__":
     main() 
